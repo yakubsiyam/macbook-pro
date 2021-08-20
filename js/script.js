@@ -40,11 +40,11 @@ document.getElementById('storage-1tb').addEventListener('click', function(){
 // delivery event handle
 document.getElementById('delivery-0').addEventListener('click', function(){
     updateCost('delivery', 0);
-})
+});
 
 document.getElementById('delivery-20').addEventListener('click', function(){
     updateCost('delivery', 20);
-})
+});
 
 // counting promo code
 document.getElementById('promo-apply').addEventListener('click', function(){
