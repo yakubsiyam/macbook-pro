@@ -9,13 +9,13 @@ function totalCost(){
     document.getElementById('promo-cost-total').innerText = totalPrice;
 }
 
-//get button id and cost
+//get button id and calling totalCost function
 function updateCost(buttonId, cost) {
     document.getElementById(buttonId + '-cost').innerText = cost;
     totalCost();
-  }
+}
 
-//memory event handle
+//memory event handler
 document.getElementById('memory-8').addEventListener('click', function(){
     updateCost('memory', 0);
 });
@@ -24,7 +24,7 @@ document.getElementById('memory-16').addEventListener('click', function(){
     updateCost('memory', 180);
 });
 
-// storage event handle
+// storage event handler
 document.getElementById('storage-256').addEventListener('click', function(){
     updateCost('storage', 0);
 });
@@ -37,7 +37,7 @@ document.getElementById('storage-1tb').addEventListener('click', function(){
     updateCost('storage', 180);
 });
 
-// delivery event handle
+// delivery event handler
 document.getElementById('delivery-0').addEventListener('click', function(){
     updateCost('delivery', 0);
 });
@@ -50,10 +50,9 @@ document.getElementById('delivery-20').addEventListener('click', function(){
 document.getElementById('promo-apply').addEventListener('click', function(){
     let promoInput = document.getElementById('promo-input').value;
     if(promoInput == 'stevekaku'){
-        const discountTotal = document.getElementById('total-cost').innerText;
-        let total = parseFloat(discountTotal);
-        total = total - (total*.2);
+        let total = parseFloat(document.getElementById('total-cost').innerText);
+        total = total - (total*.2);             //calculating promo code discount
         document.getElementById('promo-cost-total').innerText = total;
     }
-    document.getElementById('promo-input').value = '';
+    document.getElementById('promo-input').value = '';          //clear promo input button
 });
